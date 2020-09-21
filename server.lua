@@ -1,4 +1,10 @@
-local webhook = "https://discordapp.com/api/webhooks/757298737025515570/FNKQzFy1a-N4TzZAFi7wkZpf4wk1QIDPDo56j1XVi3qzzaP-ZTwmJs-R57jOwKvLQawY"
+local webhook = ""
+
+
+
+RegisterCommand("combat", function(source, args, rawcmd)
+    TriggerClientEvent("pixel_antiCL:show", source)
+end)
 
 AddEventHandler("playerDropped", function(reason)
     local crds = GetEntityCoords(GetPlayerPed(source))

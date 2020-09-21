@@ -6,3 +6,5 @@ Config.AlertTextColor = {r=255, g=0, b=0} -- RED (Player Left Game)
 Config.LogSystem = true
 Config.UseSteam = true -- If False then use R* License
 Config.LogBotName = "pixel_logs"
+Config.AutoDisableDrawing = true
+Config.AutoDisableDrawingTime = 15000
