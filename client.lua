@@ -34,7 +34,7 @@ function Display(id, crds, identifier, reason)
         while displaying do
             Wait(5)
             local pcoords = GetEntityCoords(PlayerPedId())
-            if GetDistanceBetweenCoords(crds.x, crds.y, crds.z, pcoords.x, pcoords.y, pcoords.z, true) < 15.0 and show3DText then
+            if show3DText and #(crds - pcoords) < 15.0 then
                 DrawText3DSecond(crds.x, crds.y, crds.z+0.15, "Player Left Game")
                 DrawText3D(crds.x, crds.y, crds.z, "ID: "..id.." ("..identifier..")\nReason: "..reason)
             else
@@ -46,7 +46,6 @@ end
 
 function DrawText3DSecond(x,y,z, text)
     local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
     SetTextScale(0.45, 0.45)
     SetTextFont(4)
     SetTextProportional(1)
@@ -59,7 +58,6 @@ end
 
 function DrawText3D(x,y,z, text)
     local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
     SetTextScale(0.45, 0.45)
     SetTextFont(4)
     SetTextProportional(1)
